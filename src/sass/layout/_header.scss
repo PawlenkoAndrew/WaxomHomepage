@@ -1,24 +1,44 @@
 header{
-	position: absolute;
-	top: 30px;
-	width: 1200px;
-	margin: 0 auto;
-	left: 50%;
-	margin-left: -600px;
-	
-
-
+	position: relative;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .d-flex{
 	display: flex;
+	flex-wrap: wrap;
+}
+.main-nav{
+	text-align: right;
+	padding: 0 15px;
 }
 .menu__links{
-	display: inline-flex;
-	padding: 0;
+	display: none;
+	padding: 0 10px;
+
+
+		li{
+			display: block;
+
+		}
+
+	@media(min-width: 1200px){
+		display: flex;
+	}
 
 
 	li{
+		padding: 10px 20px;
+		text-align: left;
+		background-color: $links-hover-color;
+		
+		@media(min-width: 1200px){
 		padding: 0 20px;
+		background-color: transparent;	
+		
+		}
 
 	}
 	a{
@@ -29,23 +49,96 @@ header{
 		}
 	}
 }
-.main-nav{
+.menu__icon{
+	width: 40px;
+	height: 40px;
+	border:1px solid $button-color;
+	border-radius: 5px;
+	position: absolute;
+
+	top:10px;
+	right: 15px;
+
+	
+	
+	
+	&:hover{
+		color:$hover-color;
+	}
+	
+
+		span{
+			display: inline-block;
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 3px;
+			background-color:$button-color;
+			left:9px;
+			top:18px;
+		}
+		&:after{
+			display: inline-block;
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 3px;
+			background-color:$button-color;
+			left:9px;
+			top:5px;
+			}
+		&:before{
+			display: inline-block;
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 3px;
+			background-color:$button-color;
+			left:9px;
+			top:30px;
+			}
+
+
+	@media(min-width: 1200px){
+		display: none;
+	}
+		
+		
+	
+}
+.menu-wrap{
+	
+	position: absolute;
 	justify-content: space-between;
+	top: 30px;
+	z-index:10;
+	left:0;
+	right: 0;
+	margin: 0 auto;
+	
+	align-items: flex-start;
+		
+	
 
 }
 .logo{
+	
+padding: 0 15px;
+	@media(min-width: 1200px){
+		
+	}
 
-}
-.menu__icon{
-	position: absolute;
+	a{
+
+	}
 }
 .search{
 	position: absolute;
 	top:70px;
 	left:310px;
-	display: none;
+	}
 
-}
+
 .input{
 		width: 650px;
 		border-radius:5px;
@@ -72,14 +165,29 @@ header{
 		}
 }
 .icons{
+  display: none;
   
-  display: flex;
-  align-items: center;
-  
+  @media(min-width: 1200px){
+
+  	display: flex;
+  	align-items: center;
+  }
+  a{
+  	color:$white;
+  }
 
 }
 .fas{
-  padding: 0 10px;
+  margin: 0 10px;
   cursor:pointer;
+
   
+}
+.link-wrap{
+position: absolute;
+left: 0;
+top: 60px;
+	@media(min-width: 1200px){
+		position: static;
+	}
 }
